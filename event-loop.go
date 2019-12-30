@@ -6,8 +6,8 @@ import (
 	"math"
 	"time"
 
-	"github.com/go-flutter-desktop/go-flutter/embedder"
-	"github.com/go-flutter-desktop/go-flutter/internal/priorityqueue"
+	"github.com/zhileichen/go-flutter/embedder"
+	"github.com/zhileichen/go-flutter/internal/priorityqueue"
 )
 
 // EventLoop is a event loop for the main thread that allows for delayed task

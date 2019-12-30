@@ -7,7 +7,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/go-flutter-desktop/go-flutter/embedder"
+	"github.com/zhileichen/go-flutter/embedder"
 	"github.com/go-gl/glfw/v3.2/glfw"
 )
 

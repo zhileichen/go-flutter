@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/go-flutter-desktop/go-flutter/embedder"
-	"github.com/go-flutter-desktop/go-flutter/internal/tasker"
-	"github.com/go-flutter-desktop/go-flutter/plugin"
+	"github.com/zhileichen/go-flutter/embedder"
+	"github.com/zhileichen/go-flutter/internal/tasker"
+	"github.com/zhileichen/go-flutter/plugin"
 )
 
 type messenger struct {

@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-flutter-desktop/go-flutter/embedder"
+	"github.com/zhileichen/go-flutter/embedder"
 )
 
 // An Item is something we manage in a priority queue.

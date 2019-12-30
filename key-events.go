@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/go-flutter-desktop/go-flutter/plugin"
+	"github.com/zhileichen/go-flutter/plugin"
 	"github.com/go-gl/glfw/v3.2/glfw"
 )
 
@@ -58,7 +58,7 @@ type keyEventMessage struct {
 // To stay consistent with other embedders, glfw.Repeat is "seen" as a
 // keydown event.
 // Comment about RawKeyEvent on others embedders:
-// https://github.com/go-flutter-desktop/go-flutter#issuecomment-494998771
+// https://github.com/zhileichen/go-flutter#issuecomment-494998771
 func (p *keyeventPlugin) sendKeyEvent(window *glfw.Window, key glfw.Key, scancode int, action glfw.Action, mods glfw.ModifierKey) {
 
 	var typeKey string

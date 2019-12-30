@@ -6,8 +6,8 @@ import (
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"github.com/pkg/errors"
 
-	"github.com/go-flutter-desktop/go-flutter/internal/tasker"
-	"github.com/go-flutter-desktop/go-flutter/plugin"
+	"github.com/zhileichen/go-flutter/internal/tasker"
+	"github.com/zhileichen/go-flutter/plugin"
 )
 
 // platformPlugin implements flutter.Plugin and handles method calls to the

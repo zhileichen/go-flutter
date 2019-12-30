@@ -1,7 +1,7 @@
 package flutter
 
 import (
-	"github.com/go-flutter-desktop/go-flutter/plugin"
+	"github.com/zhileichen/go-flutter/plugin"
 )
 
 const navigationChannelName = "flutter/navigation"

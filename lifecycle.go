@@ -3,7 +3,7 @@ package flutter
 import (
 	"fmt"
 
-	"github.com/go-flutter-desktop/go-flutter/plugin"
+	"github.com/zhileichen/go-flutter/plugin"
 	"github.com/go-gl/glfw/v3.2/glfw"
 )
 

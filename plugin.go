@@ -3,7 +3,7 @@ package flutter
 import (
 	"github.com/go-gl/glfw/v3.2/glfw"
 
-	"github.com/go-flutter-desktop/go-flutter/plugin"
+	"github.com/zhileichen/go-flutter/plugin"
 )
 
 // TODO: move type Plugin into package plugin?

@@ -1,6 +1,6 @@
 package flutter
 
-import "github.com/go-flutter-desktop/go-flutter/plugin"
+import "github.com/zhileichen/go-flutter/plugin"
 
 type accessibilityPlugin struct{}
 

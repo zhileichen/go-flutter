@@ -11,12 +11,12 @@ import (
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"github.com/pkg/errors"
 
-	"github.com/go-flutter-desktop/go-flutter/embedder"
-	"github.com/go-flutter-desktop/go-flutter/internal/debounce"
-	"github.com/go-flutter-desktop/go-flutter/internal/execpath"
-	"github.com/go-flutter-desktop/go-flutter/internal/opengl"
-	"github.com/go-flutter-desktop/go-flutter/internal/tasker"
-	"github.com/go-flutter-desktop/go-flutter/plugin"
+	"github.com/zhileichen/go-flutter/embedder"
+	"github.com/zhileichen/go-flutter/internal/debounce"
+	"github.com/zhileichen/go-flutter/internal/execpath"
+	"github.com/zhileichen/go-flutter/internal/opengl"
+	"github.com/zhileichen/go-flutter/internal/tasker"
+	"github.com/zhileichen/go-flutter/plugin"
 )
 
 // Run executes a flutter application with the provided options.

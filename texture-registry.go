@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/go-flutter-desktop/go-flutter/embedder"
-	"github.com/go-flutter-desktop/go-flutter/internal/opengl"
-	"github.com/go-flutter-desktop/go-flutter/internal/tasker"
+	"github.com/zhileichen/go-flutter/embedder"
+	"github.com/zhileichen/go-flutter/internal/opengl"
+	"github.com/zhileichen/go-flutter/internal/tasker"
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"github.com/pkg/errors"
 )

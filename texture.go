@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/go-flutter-desktop/go-flutter/embedder"
+	"github.com/zhileichen/go-flutter/embedder"
 )
 
 // Texture is an identifier for texture declaration
