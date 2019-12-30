@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"runtime/debug"
 	"sync"
+	"time"
 
+	"github.com/getsentry/sentry-go"
 	"github.com/pkg/errors"
 )
 
@@ -215,6 +217,8 @@ func (m *MethodChannel) handleMethodCall(handler MethodHandler, methodName strin
 	defer func() {
 		p := recover()
 		if p != nil {
+			sentry.CurrentHub().Recover(p)
+			sentry.Flush(time.Second * 5)
 			fmt.Printf("go-flutter: recovered from panic while handling call for method '%s' on channel '%s': %v\n", methodName, m.channelName, p)
 			debug.PrintStack()
 		}

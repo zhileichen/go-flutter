@@ -3,8 +3,10 @@ package flutter
 import (
 	"encoding/json"
 	"fmt"
+	"time"
 	"unicode"
 
+	"github.com/getsentry/sentry-go"
 	"github.com/go-flutter-desktop/go-flutter/plugin"
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"github.com/pkg/errors"
@@ -69,7 +71,18 @@ func (p *textinputPlugin) InitPluginGLFW(window *glfw.Window) error {
 	return nil
 }
 
+func sentryReport() {
+	p := recover()
+	if p != nil {
+		sentry.CurrentHub().Recover(p)
+		sentry.Flush(time.Second * 5)
+	}
+}
+
 func (p *textinputPlugin) handleSetClient(arguments interface{}) (reply interface{}, err error) {
+
+	defer sentryReport()
+
 	args := []json.RawMessage{}
 	err = json.Unmarshal(arguments.(json.RawMessage), &args)
 	if err != nil {
@@ -95,6 +108,8 @@ func (p *textinputPlugin) handleClearClient(arguments interface{}) (reply interf
 }
 
 func (p *textinputPlugin) handleSetEditingState(arguments interface{}) (reply interface{}, err error) {
+	defer sentryReport()
+
 	if p.clientID == 0 {
 		return nil, errors.New("cannot set editing state when no client is selected")
 	}
@@ -124,6 +139,8 @@ func (p *textinputPlugin) handleSetEditingState(arguments interface{}) (reply in
 }
 
 func (p *textinputPlugin) glfwCharCallback(w *glfw.Window, char rune) {
+	defer sentryReport()
+
 	if p.clientID == 0 {
 		return
 	}
@@ -138,6 +155,8 @@ func (p *textinputPlugin) glfwCharCallback(w *glfw.Window, char rune) {
 }
 
 func (p *textinputPlugin) glfwKeyCallback(window *glfw.Window, key glfw.Key, scancode int, action glfw.Action, mods glfw.ModifierKey) {
+
+	defer sentryReport()
 
 	keyboardShortcutBind := keyboardShortcutsGLFW{mod: mods}
 	if key == glfw.KeyEscape && action == glfw.Press {

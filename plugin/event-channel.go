@@ -2,9 +2,10 @@ package plugin
 
 import (
 	"fmt"
-	"runtime/debug"
-
+	"github.com/getsentry/sentry-go"
 	"github.com/pkg/errors"
+	"runtime/debug"
+	"time"
 )
 
 // EventChannel provides way for flutter applications and hosts to communicate
@@ -59,6 +60,8 @@ func (e *EventChannel) handleChannelMessage(binaryMessage []byte, responseSender
 	defer func() {
 		p := recover()
 		if p != nil {
+			sentry.CurrentHub().Recover(p)
+			sentry.Flush(time.Second * 5)
 			fmt.Printf("go-flutter: recovered from panic while handling message for event channel '%s': %v\n", e.channelName, p)
 			debug.PrintStack()
 		}
